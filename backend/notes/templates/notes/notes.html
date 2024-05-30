@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'fix-button.html' %}
+
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <h1>Notes</h1>
+    </div>
+    <div class="row justify-content-center">
+
+        {% for note in notes %}
+
+        <div class="col-md-4">
+            <div class="card" style="background-color: black; border: 1px solid #ffffff; border-radius: 12px; padding: 20px; margin-top: 20px;">
+                <div class="row justify-content-center">
+                    <h5 class="card-title"> {{note.title}} </h5>
+                </div>   
+                <hr style="border-top: 1px solid #ffffff; width: 75%; margin: auto;">
+                <p class="card-text mt-3"> {{note.description|slice:110}} </p>
+                <div class="row  justify-content-center">
+                    <a class="m-1" href="{% url 'update-note' note.id %}">
+                        <button style="background-color: rgb(0, 0, 143); color: white; border: none; padding: 4px 8px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                            Edit
+                        </button>   
+                    </a>
+                    <a class="m-1" href="{% url 'delete-note' note.id %}">
+                        <button style="background-color: red; color: white; border: none; padding: 4px 8px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                            Delete
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock content %}
+
