@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+            <div class="card" style="background-color: black; border: 1px solid #ffffff; border-radius: 12px; padding: 20px; margin: auto; margin-top: 50px;">
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{form.as_p}}
+                    
+                    <a href="{% url 'notes' %}" class="btn btn-primary" style="color: #ffffff; background-color:transparent; border: solid 1px; border-color: #000;">Back</a>
+                    <button type="submit" class="btn btn-primary" style="background-color:rgb(0, 0, 143); border: solid 1px; border-color: rgb(0, 0, 143);">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+    </div>
+</div>
+
+{% endblock content %}
