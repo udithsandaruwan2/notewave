@@ -9,9 +9,7 @@ const NoteCard = ({ note, onClick }) => {
           <span className='text-l text-white'>{note.title}</span>
           <br />
           <span className='text-white text-sm'>{note.content}</span>
-          <div className='text-white w-full flex justify-end opacity-0 hover:opacity-100'>
-            <Icon icon={<Pen />} />
-          </div>
+          
         </div>
       </div>
     </div>
