@@ -10,8 +10,12 @@ export default {
         primery:'#202225',
         secondary:'#5865f2',
       },
+      fontFamily: {
+        'poppins': ['Poppins'],
+      },
     },
   },
   plugins: [],
+  variants: {},
 }
 
