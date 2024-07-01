@@ -10,13 +10,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body style="background-color: black; color: white;">
+<body style="background-color: #3F3F3F; color: white;">
 
     {% if messages %}
 
         <ul class="list-group">
             {% for message in messages %}
-                <li class="list-group-item {% if message.tags %} {{message.tags}} {% endif %}" style="background-color: black; color: white;">
+                <li class="list-group-item {% if message.tags %} {{message.tags}} {% endif %}" style="background-color: #3F3F3F; color: white;">
                     {{ message }}
                 </li>
             {% endfor %}
@@ -25,6 +25,7 @@
     {% endif %}
 
     {% block content %}
+
 
     {% endblock content %}
 
