@@ -35,5 +35,10 @@ def notes(request):
     return render(request, 'notes/notes.html', context)
 
 def deleteNote(request, pk):
-    context = {}
+    note = Note.objects.get(id=pk)
+    if request.method == 'POST':
+        note.delete()
+        messages.success(request, "Note deleted successfull !")
+        return redirect('notes')
+    context = {'note':note}
     return render(request, 'notes/delete-note.html', context)

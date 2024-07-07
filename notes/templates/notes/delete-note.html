@@ -4,18 +4,18 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card" style="background-color: #3F3F3F; border: 1px solid #ffffff; border-radius: 12px; padding: 20px; margin-top: 20px; width: 500px; margin: auto;">
+        <div class="card" style="background-color: #202124; border: 1px solid #ffffff; border-radius: 12px; padding: 20px; margin-top: 20px; width: 500px; margin: auto; margin-top: 50px;">
             <div class="card-body">
                 <form method="POST">
 
                     {% csrf_token %}
                     
                     <h5 class="card-title">Delete Message</h5>
-                    <p class="card-text">Are you sure you want to delete this message?</p>
+                    <p class="card-text">Are you sure you want to delete {{ note.title }} ?</p>
                     <a class="m-2" href="{% url 'notes' %}" style="background-color: gray; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; margin-left: 10px;">
                         Back
                     </a>
-                    <button class="m-2" style="background-color: rgb(163, 55, 55); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                    <button class="m-2" style="background-color: rgb(255, 0, 0); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">
                         Confirm
                     </button>
                 </form>
