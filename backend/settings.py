@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from os import getenv
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-&2(0+)fg3n&opop-azi-8+#u^7ivnafc+izqkg_pz%bb5b_q#t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '192.168.8.107','note-wave-8c96843b7825.herokuapp.com']
 
 
 # Application definition
@@ -79,30 +80,50 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # Add these at the top of your settings.py
-# from os import getenv
-# from dotenv import load_dotenv
+# Add these at the top of your settings.py
 
-# # Replace the DATABASES section of your settings.py with this
+
+
+
+
+
+
+# Replace the DATABASES section of your settings.py with this
 # DATABASES = {
 #   'default': {
 #     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': getenv('PGDATABASE'),
-#     'USER': getenv('PGUSER'),
-#     'PASSWORD': getenv('PGPASSWORD'),
-#     'HOST': getenv('PGHOST'),
-#     'PORT': getenv('PGPORT', 5432),
+#     'NAME': PGDATABASE,
+#     'USER': PGUSER,
+#     'PASSWORD': PGPASSWORD,
+#     'HOST': PGHOST ,
+#     'PORT': 5432,
 #     'OPTIONS': {
 #       'sslmode': 'require',
 #     },
 #   }
 # }
+load_dotenv()
+
+DATABASES = {
+'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': os.getenv('PGDATABASE'),
+    'USER': os.getenv('PGUSER'),
+    'PASSWORD': os.getenv('PGPASSWORD'),
+    'HOST': os.getenv('PGHOST'),
+    'PORT': os.getenv('PGPORT', 5432),
+    'OPTIONS': {
+        'sslmode': 'require',
+    },
+}
+}
 
 
 # Password validation
