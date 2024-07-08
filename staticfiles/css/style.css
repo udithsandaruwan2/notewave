@@ -1,0 +1,7 @@
+#note-form {
+    background-color: rgb(37, 37, 37); /* Change this to the desired shade of gray */
+    color: white; /* Optional: Change text color for better contrast */
+    border: 1px solid #ccc; /* Optional: Change border color */
+    padding: 8px; /* Optional: Add padding for better spacing */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
